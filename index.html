@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ukr">
+	<head>
+		<title>Головна</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<script>
+			async function sendData() {
+				let form = document.getElementById("data_form");
+				let formData = new FormData(form);
+
+				let response = await fetch('send.php', {
+												method: 'POST',
+												body: formData
+				});
+				let data = await response.text();
+			}
+		</script>
+
+		<header class="first">
+			<h1 class="x">Suzuki</h1>
+			<p>Mobile</p>
+		</header>
+
+		<main class="wrapper">
+			<div class="second">
+				<ul class="list">
+					<li>First page</li>
+					<li><a href="secondIndex.html">Second page</a></li>
+				</ul>
+			</div>
+
+			<div class="third_fifth">
+				<div class="third">
+					<p>Модельний ряд</p>
+				</div>
+					
+				<div class="fifth">
+					<form id="data_form">
+						<label for="text">Text to send</label> 
+						<input type="text" name="text" placeholder="Enter your text here" size="20" required><br>
+						<button type="button" onclick="sendData()" id="myButton">Send</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="fourth_sixth">
+				<div class="fourth">
+					<ol class="values_list">
+						<li>Ми прозорі та відкриті</li>
+						<li>Ми ретельні та практичні</li>
+						<li>Ми доброзичливі та комунікабельні</li>
+						<li>Ми життєрадісні та амбіційні</li>
+					</ol>
+				</div>
+
+				<div class="sixth">
+					<p>Цінності бренду</p>
+				</div>
+			</div>
+		</main>
+
+		<footer class="seventh">
+			<h3 class="y">Приєднуйся!</h3>
+			<p>Усі права належать Suzuki</p>
+		</footer>
+	</body>
+</html>
