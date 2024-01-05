@@ -1,5 +1,7 @@
 <?php
-$conn = new mysqli("sql106.infinityfree.com", "if0_35510451", "hDiX0bIrFAEf", "if0_35510451_web6_db");
+require_once 'config.php';
+
+$conn = new mysqli(HOST_NAME, USER_NAME, PASSWORD, DATABASE);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
